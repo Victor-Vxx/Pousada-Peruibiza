@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Wifi, Wind, Tv, Users, Moon } from "lucide-react";
 
@@ -50,11 +51,12 @@ export default function RoomsSection() {
                     <div className="grid md:grid-cols-2 bg-white rounded-3xl overflow-hidden card-shadow-hover shadow-xl border border-gray-100 group">
                         {/* Images carousel (simplified) */}
                         <div className="relative h-72 md:h-auto overflow-hidden bg-surface">
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80"
                                 alt="Quarto duplo com cama de casal - Pousada Peruibiza"
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                loading="lazy"
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
                             {/* Room type badge */}
                             <div className="absolute top-4 left-4 bg-accent text-neutral-dark text-xs font-bold px-3 py-1.5 rounded-full">

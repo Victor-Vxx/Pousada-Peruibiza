@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
@@ -79,11 +80,12 @@ export default function GallerySection() {
                             className={`relative overflow-hidden rounded-2xl group cursor-pointer ${img.span}`}
                             onClick={() => setLightbox(img.src)}
                         >
-                            <img
+                            <Image
                                 src={img.src}
                                 alt={img.alt}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                loading="lazy"
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                             />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
                                 <ZoomIn className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-8 h-8" />
@@ -109,12 +111,16 @@ export default function GallerySection() {
                     >
                         <X className="w-8 h-8" />
                     </button>
-                    <img
-                        src={lightbox}
-                        alt="Foto em destaque da Pousada Peruibiza"
-                        className="max-w-full max-h-[85vh] object-contain rounded-xl"
-                        onClick={(e) => e.stopPropagation()}
-                    />
+                    <div className="relative w-full max-w-5xl h-[85vh]">
+                        <Image
+                            src={lightbox}
+                            alt="Foto em destaque da Pousada Peruibiza"
+                            fill
+                            className="object-contain rounded-xl"
+                            onClick={(e) => e.stopPropagation()}
+                            sizes="100vw"
+                        />
+                    </div>
                 </motion.div>
             )}
         </section>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Heart, MapPin, Users } from "lucide-react";
 
@@ -22,11 +23,12 @@ export default function AboutSection() {
                         className="relative"
                     >
                         <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
                                 alt="Área de lazer e piscina da Pousada Peruibiza"
-                                className="w-full h-full object-cover"
-                                loading="lazy"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
                         </div>
