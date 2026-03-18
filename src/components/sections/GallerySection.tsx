@@ -32,7 +32,7 @@ const galleryImages = [
         span: "",
     },
     {
-        src: "https://images.unsplash.com/photo-1537953773345-d172ccf13cf4?w=800&q=80",
+        src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
         alt: "Praia de Peruíbe ao pôr do sol",
         span: "col-span-2",
     },
